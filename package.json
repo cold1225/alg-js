@@ -1,0 +1,23 @@
+{
+  "name": "alg-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizihan1225/alg-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizihan1225/alg-js/issues"
+  },
+  "homepage": "https://github.com/lizihan1225/alg-js#readme",
+  "devDependencies": {
+    "chai": "^4.3.0"
+  }
+}
