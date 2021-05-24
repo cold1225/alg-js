@@ -16,5 +16,39 @@
  * @param {*} k 
  */
 var movingCount = function (m, n, k) {
-
+  const board = Array.from({ length: n }, (v, i) =>
+    Array.from({ length: m }, (v, j) => ({ row: i, col: j }))
+  );
+  let num = 0;
+  const getNumTotal = (number) => {
+    let divisor = 10 ** (number.toString().length - 1);
+    const result = [];
+    while (divisor !== 1) {
+      result.push(number.toString()[0]);
+      number = number % divisor;
+      divisor = divisor / 10;
+    }
+    result.push(number);
+    return result.reduce((memo, current) => memo + Number(current), 0);
+  };
+  const isOk = (row, col) => {
+    return row >= 0 && row <= m - 1 && col >= 0 && col <= n - 1;
+  };
+  const map = new Map();
+  const traverse = (row, col) => {
+    if (map.get(board[col][row])) {
+      return;
+    }
+    map.set(board[col][row], true);
+    if (getNumTotal(row) + getNumTotal(col) <= k) {
+      num++;
+    }
+    isOk(row, col + 1) && traverse(row, col + 1);
+    isOk(row, col - 1) && traverse(row, col - 1);
+    isOk(row - 1, col - 1) && traverse(row - 1, col);
+    isOk(row + 1, col - 1) && traverse(row + 1, col);
+  };
+  traverse(0, 0);
+  return num;
 };
+console.log(movingCount(16, 8, 4));
