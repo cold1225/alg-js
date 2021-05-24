@@ -32,7 +32,7 @@ var movingCount = function (m, n, k) {
     return result.reduce((memo, current) => memo + Number(current), 0);
   };
   const isOk = (row, col) => {
-    return row >= 0 && row <= m - 1 && col >= 0 && col <= n - 1;
+    return row >= 0 && row <= m - 1 && col >= 0 && col <= n - 1 && ((getNumTotal(row) + getNumTotal(col)) <= k)
   };
   const map = new Map();
   const traverse = (row, col) => {
@@ -40,13 +40,11 @@ var movingCount = function (m, n, k) {
       return;
     }
     map.set(board[col][row], true);
-    if (getNumTotal(row) + getNumTotal(col) <= k) {
-      num++;
-    }
-    isOk(row, col + 1) && traverse(row, col + 1);
-    isOk(row, col - 1) && traverse(row, col - 1);
-    isOk(row - 1, col - 1) && traverse(row - 1, col);
-    isOk(row + 1, col - 1) && traverse(row + 1, col);
+    num++
+    isOk(row, col + 1, k) && traverse(row, col + 1);
+    isOk(row, col - 1, k) && traverse(row, col - 1);
+    isOk(row - 1, col, k) && traverse(row - 1, col);
+    isOk(row + 1, col, k) && traverse(row + 1, col);
   };
   traverse(0, 0);
   return num;
