@@ -34,33 +34,17 @@ var cuttingRope = function (n) {
  * @param {*} n
  * @returns
  */
-var cuttingRope = function (n) {
-  let max = Number.MIN_SAFE_INTEGER;
-  const map = new Map();
-  (function f(n, path = []) {
-    // if (map.get(n)) {
-    //   return path.concat(map.get(n));
-    // }
-    for (let i = 1; i < n; i++) {
-      const result = f(n - i, path.concat(i));
-      // map.set(n - i, result.slice(path.length));
-      console.log(result, path, n - i);
-      if (result.length > 1) {
-        max = Math.max(
-          result.reduce((memo, current) => memo * current),
-          max
-        );
-      }
+var cuttingRope1 = function (n) {
+  const dp = new Array(n + 1);
+  dp[1] = 1;
+  for (let i = 2; i < n + 1; i++) {
+    for (let j = 1; j <= i >> 1; j++) {
+      dp[i] = Math.max(
+        dp[i] || Number.MIN_SAFE_INTEGER,
+        Math.max(j * (i - j), j * dp[i - j])
+      );
     }
-    // const result = path.concat(n);
-    // if (result.length > 1) {
-    //   max = Math.max(
-    //     result.reduce((memo, current) => memo * current),
-    //     max
-    //   );
-    // }
-    return path.concat(n);
-  })(n);
-  return max;
+  }
+  return dp[n];
 };
-console.log(cuttingRope(4));
+console.log(cuttingRope1(58));
