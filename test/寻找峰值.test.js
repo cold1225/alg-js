@@ -8,7 +8,7 @@ const {
 
 describe('寻找峰值', () => {
   it('测试边界值', () => {
-    assert.equal(findPeakElement([]), undefined);
+    // assert.equal(findPeakElement([]), undefined); //题目要求length > 1
     assert.equal(findPeakElement([1]), 0);
     assert.equal(findPeakElement([2,1]), 0);
     assert.equal(findPeakElement([1,2]), 1);
