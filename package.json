@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lizihan1225/alg-js.git"
+    "url": "git+https://github.com/lizi1225/alg-js.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lizihan1225/alg-js/issues"
+    "url": "https://github.com/lizi1225/alg-js/issues"
   },
-  "homepage": "https://github.com/lizihan1225/alg-js#readme",
+  "homepage": "https://github.com/lizi1225/alg-js#readme",
   "devDependencies": {
     "chai": "^4.3.0"
   }

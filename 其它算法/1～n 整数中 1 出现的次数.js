@@ -1,3 +1,8 @@
+/**
+ * https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/
+ * @param {*} n 
+ * @returns 
+ */
 var countDigitOne = function (n) {
   let num = 0;
   for (let i = 1; i <= n; i++) {

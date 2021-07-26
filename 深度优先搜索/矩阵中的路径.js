@@ -1,3 +1,6 @@
+/**
+ * https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
+ */
 // 1.暴力解法
 var exist = function (board, word) {
     if (word === '') return false
