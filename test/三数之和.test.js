@@ -3,7 +3,7 @@ const {
 } = require('chai')
 const {
   threeSum,
-} = require('../排序算法/三数之和')
+} = require('../双指针/三数之和')
 
 describe('三数之和', () => {
   it('测试边界值', () => {
