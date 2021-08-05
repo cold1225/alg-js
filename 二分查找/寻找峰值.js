@@ -34,7 +34,6 @@ var findPeakElement = function(nums) {
   }
   return l
 };
-console.log(findPeakElement([]))
 module.exports = {
   findPeakElement
 }
