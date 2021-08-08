@@ -1,15 +1,15 @@
-function insertion_sort(arr) {
-    for(let i = 1; i < arr.length; i++) {
-        const item = arr[i]
-        let j = i
-        while(j > 0 && arr[j - 1] > item) {
-            arr[j] = arr[j - 1]
-            j --
-        }
-        arr[j] = item
-    }
-    return arr
-}
+// function insertion_sort(arr) {
+//     for(let i = 1; i < arr.length; i++) {
+//         const item = arr[i]
+//         let j = i
+//         while(j > 0 && arr[j - 1] > item) {
+//             arr[j] = arr[j - 1]
+//             j --
+//         }
+//         arr[j] = item
+//     }
+//     return arr
+// }
 
 
 function insert(A, i, x) {
@@ -27,7 +27,7 @@ function insertion_sort(A) {
         insert(A, i, A[i])
     }
 }
-const A = [2,3,1,3,0,5,2,4,6,4,8]
-insertion_sort(A)
-console.log(A)
 // 时间复杂度O(n^2) 空间复杂度O(1) 
+module.exports = {
+    insertion_sort
+}

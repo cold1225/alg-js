@@ -31,7 +31,6 @@ function q_sort(A, lo = 0, hi = A.length) {
     q_sort(A, p + 1, hi)
 }
 
-const arr = [3, 5, 1, 4, 2, 6, 3]
-q_sort(arr)
-
-console.log(arr)
+module.exports = {
+    q_sort
+}
