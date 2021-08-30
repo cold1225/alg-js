@@ -1,4 +1,4 @@
-const { ListNode, createList } = require('./util')
+const { ListNode } = require('./util')
 
 var addTwoNumbers = function(l1, l2) {
     let p1 = l1, p2 = l2, carry = 0, head = new ListNode()
@@ -20,9 +20,6 @@ var addTwoNumbers = function(l1, l2) {
     return head.next
 };
 
-const l1 = createList([2, 4, 3])
-const l2 = createList([5, 6, 4])
-console.log(addTwoNumbers(l1, l2))
 
 // 反转链表
 function reverseList(head) {
