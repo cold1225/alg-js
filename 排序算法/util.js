@@ -49,7 +49,7 @@ function test() {
     // insertion_sort(arr)
     // printArray(arr)
 }
-test()
+// test()
 function copyArray(arr) {
     return [...arr]
 }
