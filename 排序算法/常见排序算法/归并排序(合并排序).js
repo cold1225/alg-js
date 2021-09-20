@@ -9,6 +9,9 @@ function merge(A, p, q, r) {
     }
 }
 
+// 时间复杂度计算 master公式 T(N) = 2 * T(N / 2) + O(n) 
+// a = 2 b = 2 d = 1  log(b, a) = d 所以时间复杂度为O(N ^ d * logN) = O(N * logN)
+// 比较行为没有被浪费，所以比冒泡、选择排序效率高
 function merge_sort(A, p = 0, r = A.length) {
     if (r - p < 2) return
     const q = Math.ceil((p + r) / 2)

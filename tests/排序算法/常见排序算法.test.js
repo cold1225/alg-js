@@ -4,6 +4,7 @@ const {
   q_sort,
   bubble_sort,
   selection_sort,
+  heap_sort,
   } = require('@/排序算法/常见排序算法')
   
   describe('排序算法', () => {
@@ -29,6 +30,14 @@ const {
       insertion_sort(B)
       expect(B).toEqual([-10, -3, -2, -1, 0, 3, 3, 5, 6, 6, 10, 10, 20])
       insertion_sort(C)
+      expect(C).toEqual([-2, -2, -1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 10, 12, 12])
+    })
+    it('测试堆排序', () => {
+      heap_sort(A)
+      expect(A).toEqual([3, 9, 10, 27, 38, 43, 82])
+      heap_sort(B)
+      expect(B).toEqual([-10, -3, -2, -1, 0, 3, 3, 5, 6, 6, 10, 10, 20])
+      heap_sort(C)
       expect(C).toEqual([-2, -2, -1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9, 10, 12, 12])
     })
     it('测试归并排序', () => {
