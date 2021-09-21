@@ -4,6 +4,7 @@ const { q_sort } = require('./快速排序')
 const { bubble_sort } = require('./冒泡排序')
 const { selection_sort } = require('./选择排序')
 const { heap_sort } = require('./堆排序')
+const { radix_sort } = require('./基数排序')
 
 module.exports = {
     insertion_sort,
@@ -12,4 +13,5 @@ module.exports = {
     bubble_sort,
     selection_sort,
     heap_sort,
+    radix_sort,
 }
