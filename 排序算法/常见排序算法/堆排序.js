@@ -2,9 +2,15 @@ function heap_sort(arr) {
     if (arr == null || arr.length < 2) {
         return
     }
+    // 将一个堆变为最大堆
+    // 方式一：复杂度O(N * logN)
     for(let i = 0; i < arr.length; i++) { // O(N)
         heapInsert(arr, i) // O(logN)
     }
+    // 方式二：复杂度O(N) 给定堆的个数 不过在此程序中没有改变整体复杂度，只是会快一些
+    // for(let i = arr.length - 1; i >= 0; i--) {
+    //     heapify(arr, i, arr.length)
+    // }
     let heapSize = arr.length
     swap(arr, 0, --heapSize)
     while(heapSize > 0) { // O(N)
