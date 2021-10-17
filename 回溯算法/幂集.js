@@ -67,7 +67,6 @@ function backtrack(nums, list, tmp, start) {
         tmp.pop()
     }
 }
-console.log(subsets3([1,2,3]))
 
 
 module.exports = {
